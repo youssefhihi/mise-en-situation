@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <title>Document</title>
+</head>
+<body>
+    <div class="flex flex-col gap-3 w-full p-20">
+        <input type="text" id="Num1" class="w-full py-2 border border-red-600 rounded-xl">
+        <input type="text" id="Num2" class="w-full py-2 border border-red-600 rounded-xl">
+        <div class="flex justify-evenly">
+        <div class="flex space-x2"> <label for="">+</label>
+        <input type="radio" id="plus"></div>
+        <div class="flex space-x2"> <label for="">-</label>
+            <input type="radio" id="minus"></div>
+            <div class="flex space-x2"> <label for="">*</label>
+                <input type="radio" id="multiplication"></div>
+                <div class="flex space-x2"> <label for="">/</label>
+                    <input type="radio" id="division"></div>
+                </div>
+       
+        <button  onclick="calculate()" class=" bg-blue-600 px-3 py-1 max-w-xl mx-auto text-white rounded-xl">click</button>
+        <p class="text-center text-xl"> result : <span id="result"></span></p>
+    </div>
+
+
+    <script>
+        var num1 =  document.getElementById('Num1');
+        var num2 =  document.getElementById('Num2');
+        var plus =  document.getElementById('plus');
+        var minus =  document.getElementById('minus');
+        var multiplication =  document.getElementById('multiplication');
+        var division =  document.getElementById('division');
+        var result =  document.getElementById('result');
+
+        function calculate()
+        {
+            if(plus.checked){
+            var res = parseInt(num1.value) + parseInt(num2.value);
+            result.innerHTML = res ;
+            }
+            if(multiplication.checked){
+            var res = parseInt(num1.value) * parseInt(num2.value);
+            result.innerHTML = res ;
+            }
+            if(division.checked){
+            var res = parseInt(num1.value) / parseInt(num2.value);
+            result.innerHTML = res ;
+            }
+            if(minus.checked){
+            var res = parseInt(num1.value) - parseInt(num2.value);
+            result.innerHTML = res ;
+            }
+        }
+    </script>
+</body>
+</html>
